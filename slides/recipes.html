@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Recipes</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+					<section>
+					<p>We're going to build a recipe app</p>
+					<ul>
+							<li>image</li>
+							<li>author</li>
+							<li>ingredients</li>
+							<li>directions</li>
+							<li>tags</li>
+						</ul>
+				</section>
+
+				<section>
+					<p>Step 1 - Set up document structure and layout</p>
+					<ul>
+						<li>Parts: list of recipes, recipe details, edit recipe</li>
+						<li>Menu to open each part</li>
+						<li>Include styling</li>
+						<li>~ 45 minutes, 15 minutes discuss / demo</li>
+					</ul>
+				</section>
+				
+				<section>
+					<p>Step 2 - Create objects</p>
+					<ul>
+						<li>Service object for interaction with local storage</li>
+						<li>Recipe object for a single recipe</li>
+						<li>Check if you need any other object</li>
+						<li>~ 45 minutes, 15 minutes discuss / demo</li>
+					</ul>
+				</section>
+				
+				<section>
+					<p>Step 3 - Hook up page events</p>
+					<ul>
+						<li>At start, load existing recipes</li>
+						<li>When clicking view on a recipe, open details</li>
+						<li>When clicking edit, open edit recipe</li>
+						<li>When adding new recipe, open edit form</li>
+						<li>Note: tracking a recipe with an ID</li>
+						<li>Note: recognize add vs. edit</li>
+						<li>~ 2 hours, 1 hour discuss / demo</li>
+					</ul>
+				</section>
+				
+				<section>
+					<p>Step 4 - Add service calls to backend</p>
+					<ul>
+						<li>Create a second Service object to do CRUD tasks</li>
+						<li>Use the node server as backend</li>
+						<li>~ 45 minutes, 15 minutes discuss / demo</li>
+					</ul>
+				</section>
+			</div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
