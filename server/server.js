@@ -6,26 +6,19 @@ const bodyParser = require('body-parser');
 const rp = require('request-promise-native');
 
 const app = express();
-const router = express.Router();
+
+let mem = [{test: "bla" }];
 
 // Parsers for POST data
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-// Point static path to dist
-app.use(express.static(path.join(__dirname, 'dist')));
-
-router.get('/', (req, res) => {
+app.get('/', (req, res) => {
 	res.status(200).send("This is the default endpoint, it is not the endpoint you're looking for");
 });
 
-router.get('/content', (req, res) => {
-	res.status(200).send(JSON.parse('{"data": "some string"}'));
-});
-
-// Catch all other routes and return the index file
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'dist/index.html'));
+app.get('/content', (req, res) => {
+	res.status(200).send(mem[0]);
 });
 
 /**
