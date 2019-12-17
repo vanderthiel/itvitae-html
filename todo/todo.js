@@ -1,16 +1,31 @@
 $(document).ready(function(){
   let opslag = [];
 
-  let local = localStorage.getItem("opslag");
-  if(local && local.length){
-    opslag = JSON.parse(local);
-  }
+  $.ajax({
+    url: 'http://localhost:3000/content',
+    method: 'GET'
+  }).then(function (result) {
+    opslag = result;
+    opslag.forEach(element => {
+      $("#result").append('<li>' + element + '</li>');
+    });
+  });
 
   $("#save").click(function () {
     let item = $("#todo").val();
-    $("#result").append('<li>' + item + '</li>');
 
-    opslag.push(item);
-    localStorage.setItem("opslag", JSON.stringify(opslag));
+    $("#save").hide();
+    $.ajax({
+      url: 'http://localhost:3000/content',
+      method: 'POST',
+      data: { value: item }
+    }).then(function () {
+      $("#todo").val('');
+      opslag.push(item);
+      $("#save").show();
+      $("#result").append('<li>' + item + '</li>');
+    }, function(error){
+      $("#save").show();
+    });
   });
 });

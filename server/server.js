@@ -9,7 +9,7 @@ const rp = require('request-promise-native');
 const app = express();
 app.use(cors());
 
-let mem = ["eerste \" item", "tweede item", "derde item"];
+let mem = [];
 
 // Parsers for POST data
 app.use(bodyParser.json());
@@ -27,7 +27,7 @@ app.get('/content', (req, res) => {
 });
 
 app.post('/content', (req, res) => {
-	mem.push(req.body);
+	mem.push(req.body.value);
 	res.status(201).send(req.body);
 });
 
