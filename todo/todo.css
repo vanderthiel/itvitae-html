@@ -1,4 +1,31 @@
 html, body {
   font-family: sans-serif;
+  background-color: #bbbaaa;
 }
 
+article {
+  border: 5px solid rgb(74, 84, 94);
+}
+
+input {
+  width: 80%;
+  height: 40px;
+  font-size: 30px;
+  border-radius: 10px;
+}
+button {
+  width: 20%;
+  height: 40px;
+  float: right;
+}
+
+li {
+  list-style-type: none;
+  padding: 1em;
+}
+
+@media screen and (max-width: 500px) {
+  html, body {
+    background-color: blue;
+  }
+}
