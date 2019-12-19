@@ -10,6 +10,7 @@ const app = express();
 app.use(cors());
 
 let mem = [];
+let counter = 0;
 
 // Parsers for POST data
 app.use(bodyParser.json());
@@ -27,8 +28,20 @@ app.get('/content', (req, res) => {
 });
 
 app.post('/content', (req, res) => {
-	mem.push(req.body.value);
-	res.status(201).send(req.body);
+	counter++;
+	let newItem = req.body;
+	newItem.Id = counter;
+	mem.push(newItem);
+	res.status(201).send(newItem);
+});
+
+app.delete('/content/:id', (req, res) => {
+	let id = Number(req.params.id);
+	let idx = mem.findIndex(el => el.Id === id);
+	if(idx > -1) {
+		mem.splice(idx, 1);
+	}
+	res.status(204).send();
 });
 
 /**
