@@ -1,0 +1,71 @@
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="forms.css" rel="stylesheet" type="text/css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="forms.js"></script>
+</head>
+
+<body>
+  <form>
+
+  First name:<br>
+  <input type="text" name="firstname"><br>
+  Last name:<br>
+  <input type="text" name="lastname">
+
+  <hr/>
+
+  User name:<br>
+  <input type="text" name="username"><br>
+  User password:<br>
+  <input type="password" name="psw">
+
+  <hr />
+
+  <input type="radio" name="gender" value="male" checked> Male<br>
+  <input type="radio" name="gender" value="female"> Female<br>
+  <input type="radio" name="gender" value="other"> Other
+<hr />
+
+  <input type="checkbox" name="vehicle1" value="Bike"> I have a bike<br>
+  <input type="checkbox" name="vehicle2" value="Car"> I have a car
+<hr />
+<hr />
+
+  <input type="color" name="favcolor">
+  <input type="date" name="bday">
+<hr />
+
+  Enter a date before 1980-01-01:
+  <input type="date" name="bday" max="1979-12-31"><br>
+  Enter a date after 2000-01-01:
+  <input type="date" name="bday" min="2000-01-02"><br>
+<hr />
+
+  Birthday (date and time):
+  <input type="datetime-local" name="bdaytime">
+<hr />
+
+  <input type="email" name="email">
+<hr />
+
+  Select a file: <input type="file" name="myFile">
+<hr />
+
+  Birthday (month and year):
+  <input type="month" name="bdaymonth">
+<hr />
+
+  Quantity (between 1 and 5):
+  <input type="number" name="quantity" min="1" max="5">
+<hr />
+
+  <input type="submit" value="Submit">
+  <input type="reset">
+
+</form>
+</body>
+
+</html>
